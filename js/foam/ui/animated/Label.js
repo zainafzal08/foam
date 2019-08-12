@@ -89,6 +89,10 @@ CLASS({
         // Don't animate to the empty string, or prefix changes
         var animate = this.data.length && ( oldValue.startsWith(newValue) || newValue.startsWith(oldValue) );
         DOM.setClass(this.$.querySelector('.f1'), 'animated', animate);
+
+        // update speech label
+        this.$.querySelector('.f1').setAttribute('tabindex', 3);
+        this.$.querySelector('.f1').setAttribute('aria-label', newValue !== undefined ? newValue : 'Blank')
       }
     },
     {

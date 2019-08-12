@@ -343,6 +343,16 @@ CLASS({
       z-index: 5;
     }
 
+    .calculator-display {
+      width: calc(100% - 4px);
+      height: 2.5rem;
+    }
+
+    .calculator-display:focus {
+      border-radius: 10px;
+      border: 2px solid rgba(52, 153, 128, 0.65);
+    }
+
     .alabel {
       font-size: 30px;
     }
@@ -377,7 +387,9 @@ CLASS({
           <div class="calc-display">
             <div class="inner-calc-display">
               $$history{ rowView: 'foam.apps.calc.HistoryCitationView' }
-              <div>$$row1Formatted{mode: 'read-only', tabIndex: 3, escapeHTML: false}</div>
+              <div class="calculator-display" aria-label="Calculator Display" tabindex="3">
+                $$row1Formatted{mode: 'read-only', escapeHTML: false}
+              </div>
             </div>
           </div>
           <div class="keypad">
