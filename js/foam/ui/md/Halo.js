@@ -199,14 +199,13 @@ CLASS({
   listeners: [
     {
       name: 'onMouseDown',
-      code: function(evt) {;
+      code: function(evt) {
         this.paintHalo(evt, false);
       }
     },
     {
       name: 'focus',
       code: function(evt) {
-        this.isFocused = true;
         this.paintHalo(evt, true);
       }
     },
@@ -214,8 +213,8 @@ CLASS({
       name: 'onMouseUp',
       code: function() {
         // ignore mouse up events if we are focused atm
-        if (this.isFocused) return;
-        this.clearHalo()
+        if (this,isFocused) return;
+        this.clearHalo();
       }
     },
     {
