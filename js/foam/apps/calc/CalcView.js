@@ -106,6 +106,8 @@ CLASS({
       this.X.window.addEventListener('resize', move);
 
       this.$.querySelector('.keypad').addEventListener('mousedown', function(e) { e.preventDefault(); return false; });
+      this.document.body.setAttribute('aria-label', this.data.model_.CALC_NAME.value);
+
     },
     addArrowData: function(e, data) {
       e.setAttribute('data-arrow-up', data[0])
@@ -376,10 +378,8 @@ CLASS({
         <% X.registerModel(this.CalcButton, 'foam.ui.ActionButton'); %>
         <div id="%%id" class="CalcView">
         <div style="position: relative;z-index: 100;">
-          <div style="position: absolute;">
-            <span aria-label="{{{this.data.model_.RAD.label}}}" style="top: 10;left: 0;position: absolute;" id="<%= this.setClass('active', function() { return ! this.data.degreesMode; }) %>" class="rad" title="{{{this.data.model_.RAD.label}}}"></span>
-            <span aria-label="{{{this.data.model_.DEG.label}}}" style="top: 10;left: 0;position: absolute;" id="<%= this.setClass('active', function() { return   this.data.degreesMode; }) %>" class="deg" title="{{{this.data.model_.DEG.label}}}"></span>
-          </div>
+          <span aria-label="{{{this.data.model_.RAD.label}}}" style="top: 10;left: 0;position: absolute;" id="<%= this.setClass('active', function() { return ! this.data.degreesMode; }) %>" class="rad" title="{{{this.data.model_.RAD.label}}}"></span>
+          <span aria-label="{{{this.data.model_.DEG.label}}}" style="top: 10;left: 0;position: absolute;" id="<%= this.setClass('active', function() { return   this.data.degreesMode; }) %>" class="deg" title="{{{this.data.model_.DEG.label}}}"></span>
         </div>
 
         <div class="edge"></div>
@@ -387,7 +387,7 @@ CLASS({
           <div class="calc-display">
             <div class="inner-calc-display">
               $$history{ rowView: 'foam.apps.calc.HistoryCitationView' }
-              <div class="calculator-display" aria-label="Calculator Display" tabindex="3">
+              <div class="calculator-display" aria-label="{{this.data.model_.CALC_DISPLAY.value}}" tabindex="3">
                 $$row1Formatted{mode: 'read-only', escapeHTML: false}
               </div>
             </div>

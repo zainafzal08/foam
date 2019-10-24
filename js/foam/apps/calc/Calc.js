@@ -49,6 +49,21 @@ CLASS({
       name: 'CalcName',
       value: 'Calculator',
       translationHint: 'name of application for performing simple calculations'
+    },
+    {
+      name: 'CalcHistory',
+      value: 'Calculator History',
+      translationHint: 'name of the section of the calculator which contains a history of recent computations'
+    },
+    {
+      name: 'CalcDisplay',
+      value: 'Calculator Display',
+      translationHint: 'name of the section of the calculator which shows the current number being built'
+    },
+    {
+      name: 'CalcKeypad',
+      value: 'Keypad',
+      translationHint: 'name of the section of the calculator which contains the action buttons'
     }
   ],
 
@@ -376,13 +391,11 @@ CLASS({
       name: 'deg',
       speechLabel: 'switch to degrees',
       translationHint: 'short form for "degrees" calculator mode',
-      code: function() { this.degreesMode = true; }
     },
     {
       name: 'rad',
       speechLabel: 'switch to radians',
       translationHint: 'short form for "radians" calculator mode',
-      code: function() { this.degreesMode = false; }
     },
     {
       model_: "foam.apps.calc.Unary",
