@@ -345,6 +345,16 @@ CLASS({
       z-index: 5;
     }
 
+    .calculator-display {
+      width: calc(100% - 4px);
+      height: 2.5rem;
+    }
+
+    .calculator-display:focus {
+      border-radius: 10px;
+      border: 2px solid rgba(52, 153, 128, 0.65);
+    }
+
     .alabel {
       font-size: 30px;
     }
